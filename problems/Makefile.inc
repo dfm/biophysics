@@ -7,16 +7,17 @@ RM_TMP      = ${RM} $(foreach suff, ${TMP_SUFFS}, ${NAME}.${suff})
 TMP_SUFFS   = pdf aux bbl blg log dvi ps eps
 SUFF        = pdf
 
-CHECK_RERUN = grep Rerun $*.log
+CHECK_RERUN = grep Rerun ${NAME}.log
 
 DOC_OUT = ${NAME}.${SUFF}
 
 default: ${DOC_OUT}
 
-%.pdf: %.tex
-	${LATEX} $<
-	( ${CHECK_RERUN} && ${LATEX} $< ) || ${ECHO} "Done."
-	( ${CHECK_RERUN} && ${LATEX} $< ) || ${ECHO} "Done."
+${DOC_OUT}: ${NAME}.tex ${NAME}.bib
+	pdflatex ${NAME}
+	bibtex ${NAME}
+	pdflatex ${NAME}
+	pdflatex ${NAME}
 
 clean:
 	${RM_TMP}
