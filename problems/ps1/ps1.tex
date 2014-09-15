@@ -40,15 +40,70 @@
 
 % commands
 \newcommand{\bvec}[1]{\ensuremath{\boldsymbol{#1}}}
+\newcommand{\unit}[1]{\ensuremath{\,\mathrm{#1}}}
 
 \begin{document}
 
 % === Problem 1 ===
 \section{Problem 1 --- How much DNA?}
 
+According to Wolfram Alpha, the space between two base pairs in a chain of DNA
+is 0.34nm and each base pair weighs in at about 660 daltons (or
+$\sim1\times10^{-24}\unit{kg}$) \cite{bp-wa}.
+To estimate the genome sizes, I downloaded the genome reports from NCBI
+\cite{genome-reports} and computed the mean genome size listed in
+\texttt{viruses.txt}, \texttt{prokaryotes.txt}, and \texttt{eukaryotes.txt}.
+
+\paragraph{(a)}
+From the NCBI report, the average virus genome size is about 40kbp.
+Using the number from above and the estimated $\sim10^{30}$ virus cells, the
+total length of viral DNA is $\sim10^{25}\unit{m} \approx
+1.4\times10^9\unit{ly}$.
+This DNA would weigh about $4\times10^{10}\unit{kg}$.
+
+\paragraph{(b)}
+The NCBI report gives an average prokaryote genome size of 4Mbp.
+Applying the same procedure to this genome, I find the set of all prokaryote
+DNA would stretch $\sim10^{27}\unit{m} \approx 1.4\times10^{11}\unit{ly}$ and
+weigh $4\times10^{12}\unit{kg}$.
+
+\paragraph{(c)}
+
+According to Wolfram Alpha (and Wikipedia), the size of the human genome in
+the average cell is about 3Gbp \cite{human-genome-wa}.
+This corresponds to about a meter of DNA per cell!
+Therefore, if a human has $10^{13}$ cells and if we say that there are
+$6\times10^9$ people in the world, there will be $6\times10^{22}\unit{m}
+\approx 6.5\times10^6\unit{ly}$ worth of human DNA weighing
+$2\times10^8\unit{kg}$.
+
 
 % === Problem 2 ===
 \section{Problem 2 --- Fraction of Tubulin}
+
+\paragraph{(a)}
+Using a print out of this figure and a ruler, I estimated the total length of
+microtubules in cell as $\sim28\unit{\mu m}$.
+The density of tubulin is $1690 \unit{tubulin\,dimers\,\mu m^{-1}}$
+\cite{mtiv,amos}.
+This suggests that this cell contains about 47,320 tubulin dimers or 94,640
+molecules.
+
+\paragraph{(b)}
+To estimate the volume, I'll model this cell as a cylinder where the depth
+(out of the slide) is equal to the shorter edge.
+Under this model, the total volume of the cell is
+\begin{eqnarray}
+\pi \, (2.2\unit{\mu m})^2 \, 6.1\unit{\mu m} &=& 9.3\times 10^{-17} \unit{m^3}
+\quad.
+\end{eqnarray}
+Assuming a concentration of $10\unit{\mu M} = 10^{-2}\unit{mol\,m^{-3}}$, I
+find that there are $9.3\times10^{-19}\unit{mol}$ of tubulin or $\sim56,000$
+molecules.
+
+\paragraph{(c)}
+Combining the previous two results, I find that about 63\% of the tubulin is
+polymerized in microtubules and about 37\% is in solution.
 
 
 % === Problem 3 ===
