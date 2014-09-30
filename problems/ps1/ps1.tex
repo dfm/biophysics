@@ -94,33 +94,158 @@ To estimate the volume, I'll model this cell as a cylinder where the depth
 (out of the slide) is equal to the shorter edge.
 Under this model, the total volume of the cell is
 \begin{eqnarray}
-\pi \, (2.2\unit{\mu m})^2 \, 6.1\unit{\mu m} &=& 9.3\times 10^{-17} \unit{m^3}
+\pi \, (1.1\unit{\mu m})^2 \, 6.1\unit{\mu m} &=& 2.3\times 10^{-17} \unit{m^3}
 \quad.
 \end{eqnarray}
 Assuming a concentration of $10\unit{\mu M} = 10^{-2}\unit{mol\,m^{-3}}$, I
-find that there are $9.3\times10^{-19}\unit{mol}$ of tubulin or $\sim56,000$
+find that there are $2.3\times10^{-19}\unit{mol}$ of tubulin or $\sim140,000$
 molecules.
 
 \paragraph{(c)}
-Combining the previous two results, I find that about 63\% of the tubulin is
-polymerized in microtubules and about 37\% is in solution.
+Combining the previous two results, I find that about 40\% of the tubulin is
+polymerized in microtubules and about 60\% is in solution.
 
 
 % === Problem 3 ===
 \section{Problem 3 --- Size and composition of organelles}
 
+\paragraph{(a)}
+Using a ruler, I found that the cell contains about 14 linear $\unit{\mu m}$
+of mitochondria.
+Approximating these organelles as cylinders of diameter $\sim0.3\unit{\mu m}$,
+this corresponds to a volume of $\sim 1 \unit{\mu m}^3$ and a surface area of
+$\sim 13 \unit{\mu m}^2$.
+
+Similarly, the nucleus can be approximated as a sphere (we are physicists,
+after all) of diameter $\sim 1.5 \unit{\mu m}$.
+This gives us a volume of $\sim 2 \unit{\mu m}^3$ and a surface area of $\sim
+7 \unit{\mu m}^2$.
+
+\paragraph{(b)}
+I estimated the volume of this cell (as above) assuming that it is a cylinder
+with length $6.5\unit{\mu m}$ and diameter $2.3\unit{\mu m}$.
+This gives a volume of $\sim 27 \unit{\mu m}^3$ and a surface area of $\sim 47
+\unit{\mu m}^2$.
+This means that about 11\% of the volume is filled by these two types of
+organelles.
+
+\paragraph{(c)}
+The surface density of lipid molecules in a lipid bilayer is $\sim 5
+\times 10^6 \unit{\mu m^{-2}}$ \cite{biocell}.
+Therefore, since the mitochondria and nucleus have a combined surface area of
+$\sim 20 \unit{\mu m}^2$, there should be $\sim 10^8$ lipid molecules in the
+membranes of these organelles.
+Similarly, using my estimate of the cell's surface area from the previous
+section, there should be about $2 \times 10^8$ lipid molecules in the cell's
+membrane.
+
 
 % === Problem 4 ===
 \section{Problem 4 --- Phase microscopy}
+
+The basic idea behind phase microscopy is that even without staining, the
+components of a biological sample tend to all have different indexes of
+refraction, and these are each different from the vacuum.
+This fact can be used to enhance the contrast between the surrounding solution
+and (for example) an organelle in a cell.
+It was an important discovery because it eased the study of living biological
+samples.
+As mentioned above, the sample must be translucent, probably a single layer of
+cells.
+It's possible to grow cells into a single layer \emph{in vitro} but if you
+want to study \emph{in vivo} cells, you'll need to slice single layer using
+something like a \emph{microtome} \cite{phase-microscopy2, microtome}.
+
+In practice, when a plane wave passes through a cell, the light is phase
+shifted by $\sim-\pi/2$ relative to the uninterrupted light but this phase
+shift must be very sensitive to the specific sample.
+Then, the background light is phase shifted by $\sim\pi/2$ or $\sim-\pi/2$
+to produce destructive or constructive interference, respectively, at the
+location of the scattered light.
+The phase shift of the background light is achieved by a phase plate, a ring
+with a specifically chosen index of refraction, is positioned in the right
+location to interrupt the un-scattered light \cite{phase-microscopy}.
+
+\Fig{phase-micro} shows a sketch of the standard phase microscope optical
+path.
+Tracing this path, the incident light enters from the left (indicated in blue)
+and passed through the ``condenser annulus'' (\emph{a} in \fig{phase-micro})
+where all of the light is blocked except for a thin ring.
+This ring is then focused, by the lens at \emph{b}, onto the sample at
+\emph{c}.
+Then, the sample scatters/phase shifts some of the incident light (indicated
+with the red area).
+Finally, the background light (which is still in a ring) is focused (by the
+lens at \emph{d}) through the phase plate (at \emph{e}) and onto the image
+plane at the right hand side of \fig{phase-micro}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{phase_micro.pdf}
+\end{center}
+\caption{A sketch of the standard phase microscope setup.
+In this figure, the blue shaded regions represent the incident, un-scattered
+light and the red traces the path of the light that was phase shifted by the
+sample.
+The light path is left to right through the components:
+(a) condenser annulus,
+(b) condenser lens,
+(c) specimen,
+(d) objective lens, and
+(e) phase plate.
+\figlabel{phase-micro}}
+\end{figure}
 
 
 % === Problem 5 ===
 \section{Problem 5 --- Adaptive significance}
 
-\cite{gerhart, alon, lynch}
+Lynch \cite{lynch} presents a probabilistic argument that ``natural
+selection'' is not the sole source of adaptation, in contrast to what is the
+(apparently) common lore in the evolutionary biology literature.
+The basis of this argument is the assertion that other stochastic processes
+(mutation, recombination, and genetic drift) don't have a zero-mean effect on
+the population and, in fact, the net result is nonrandom.
+The resulting discussion is convincing but this author doesn't really make
+claims about the amplitude of this effect.
+In other words, it's not obvious, from this discussion, if this is a
+\emph{practically} important point but the theory is definitely thought
+provoking.
+
+In the second paper, Alon \cite{alon} gives a vague description of the
+modularity and network structure of cells and biological organisms without
+explicitly exploring the specific \emph{source} of this structure.
+Like Lynch \cite{lynch}, the main argument here is that the modularity of
+cellular elements results from small stochastic variations, instead of large
+coherent changes.
+My primary complaint about this paper is that, in my opinion, the analogy
+with neural networks completely misses an important point.
+As discussed in the paper, neural networks are generally ``evolved''
+stochastically and while it's true that each layer \emph{formally} depends on
+all of the outputs from the lower levels, after training the activations are
+actually very sparse and the networks that perform best are, in practice,
+modular---see Zeiler \& Fergus \cite{fergus} for example.
+In the case of neural networks, this \emph{isn't} surprising because if the
+structure is too general then the model will over fit the training data and it
+won't generalize to new situations.
+A more interesting comparison might be to consider probabilistic graphical
+models.
+These are modular graphical descriptions of probabilistic models of data where
+all of the information is encoded in the \emph{missing} edges \cite{pgm}.
+
+I must admit that I had a lot of trouble following the theory in the paper by
+Gerhart \& Kirschner \cite{gerhart}.
+At a high level, they seem to agree with Lynch \cite{lynch} that natural
+selection is not the only source of evolution but they emphasize the
+importance of environmental factors on the developmental pathway.
+Unlike Lynch \cite{lynch} and Alon \cite{alon}, these authors argue that
+evolution can occur in large stochastic variations if the phenotype mutation
+is favorable.
+
+
 
 % === Bibliography ===
 \bibliography{ps1}{}
-\bibliographystyle{plain}
+\bibliographystyle{unsrt}
 
 \end{document}
