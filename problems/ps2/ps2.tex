@@ -1,0 +1,136 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{fancyhdr}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{listings}
+\lstset{language=Python,
+        basicstyle=\footnotesize\ttfamily,
+        showspaces=false,
+        showstringspaces=false,
+        tabsize=2,
+        breaklines=false,
+        breakatwhitespace=true,
+        identifierstyle=\ttfamily,
+        keywordstyle=\bfseries,
+        commentstyle=\it,
+        stringstyle=\it,
+    }
+
+\usepackage[pdftex]{graphicx}
+
+% header
+\fancyhead{}
+\fancyfoot{}
+\fancyfoot[C]{\thepage}
+\fancyhead[R]{Daniel Foreman-Mackey}
+\fancyhead[L]{Biophysics --- Problem Set 2}
+\pagestyle{fancy}
+\setlength{\headsep}{25pt}
+
+% shortcuts
+\newcommand{\Eq}[1]{Equation (\ref{eq:#1})}
+\newcommand{\eq}[1]{Equation (\ref{eq:#1})}
+\newcommand{\eqlabel}[1]{\label{eq:#1}}
+\newcommand{\Fig}[1]{Figure \ref{fig:#1}}
+\newcommand{\fig}[1]{Figure \ref{fig:#1}}
+\newcommand{\figlabel}[1]{\label{fig:#1}}
+
+% commands
+\newcommand{\bvec}[1]{\ensuremath{\boldsymbol{#1}}}
+\newcommand{\unit}[1]{\ensuremath{\,\mathrm{#1}}}
+
+\begin{document}
+
+% === Problem 1 ===
+\section{Problem 1 --- Einstein's Diffusion}
+
+\paragraph{(a)}
+
+In his 1905 paper \cite{einstein}, Einstein derived the mathematical
+formalism for the stochastic Brownian motions of a particle suspended in a
+liquid.
+By considering a volume
+
+
+\paragraph{(b)}
+
+
+
+
+% === Problem 2 ===
+\section{Problem 2 --- Life at Low Reynolds Number}
+
+\paragraph{(a)}
+
+Purcell's \emph{Life at Low Reynolds number} \cite{purcell} really is a
+pleasure to read!
+The main point of the paper is to explore some of the surprising and
+unintuitive dynamics at low Reynolds number.
+In particular, he spends most of the talk describing how small organisms---or
+``bugs''---might propel themselves (``swim'') in the effective absence of
+inertia.
+The last section describes a possible motivation for these motions and this
+again results in a discussion of the unintuitive physics in this limit.
+
+The first unintuitive result starts with the scallop example described below.
+The main argument here is that, since Navier-Stokes becomes time independent
+at low Reynolds number, a scallop could not swim in such conditions.
+Instead, the simplest ``creature'' that could swim at low Reynolds number
+would need two degrees of freedom.
+In the example given in Figure 7, I think that this animal would swim from
+right-to-left (not left-to-right as he seems to imply in the text).
+
+Purcell then moves on to discuss a theory of how a creature with a flagellum
+might move.
+Starting with experimental evidence showing that flagella are powered by some
+sort of rotating motor, Purcell argues that the direction of motion of the
+creature is not immediately obvious.
+Instead of displacing the surrounding medium to move, the mechanism is more
+similar to a corkscrew.
+In the paper, Purcell considers a corkscrew in a viscous liquid but I think
+that the thought experiment would also work if you consider opening a bottle
+of wine.
+In that case, you're again applying a torque to generate a translation.
+
+The final theory in this talk concerns the interesting question of why these
+microscopic creates would want to swim.
+By making a few (probably reasonable) assumptions to simplify the problem,
+Purcell argues that diffusion is still going to be the main mechanism for
+these creatures to obtain nutrients (instead of stirring the medium to collect
+them).
+However, they could swim to regions with higher nutrient density by moving
+faster than the rate of diffusion.
+Purcell tentatively argues that the measurements in Figure 11 suggest that
+this is correct (and it seems convincing) but I don't know if this is a
+commonly held belief.
+
+
+\paragraph{(b) The Scallop Theorem}
+
+The first example of low Reynolds number dynamics is a scallop in a viscous
+liquid.
+Apparently, scallops swim by opening and quickly closing their valves, thus
+displacing water and moving in the expected direction \cite{scallop}.
+If a scallop were to find itself in a low Reynolds number situation, it would
+not be able to move.
+In the absence of inertia, the Navier-Stokes equation is no longer time
+dependent and since the only motion that a scallop can perform is
+``reciprocal''---the time-reversed configurations are identical to the
+original---it can't generate any net displacement.
+Instead, when closing its valves, the scallop simply reverses the motion
+produced when opening them.
+This restriction will apply to any organism with only one degree of freedom in
+configuration space but although the motion of a fish's tail might appear
+somewhat similar, I think that fish would still be able to swim at low
+Reynolds number because the tail is flexible so it effectively has more
+degrees of freedom; this is the ``flexible oar'' model in the paper.
+
+
+% === Bibliography ===
+\bibliography{ps2}{}
+\bibliographystyle{unsrt}
+
+\end{document}
