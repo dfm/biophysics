@@ -41,8 +41,26 @@ R = 4 * u.nm
 n = 370.
 run(R, n, cinf, lw=2, ls="--")
 
+print("Part 2")
+h = np.log(2) / (20 * u.s)
+vol = (1 * u.micrometer) ** 3
+c = n / (u.um)**3 / const.N_A
+w = vol * cinf * h
+
+k = (n / (60. * u.s) * u.min / u.micrometer / const.N_A) \
+    .to(u.micromole * u.min / (u.s * u.micrometer))
+v = (w / k).to(u.micrometer / u.min)
+
+print("h = ", h)
+print("w = ", w.to(u.micromole / u.s))
+print("k = ", k)
+print("v = ", v)
+
+assert 0
+
 pl.xlabel(r"$\log_{10} s / \mathrm{nm}$")
 pl.ylabel(r"$c(s) / \mathrm{\mu M}$")
 fig = pl.gcf()
 fig.subplots_adjust(bottom=0.15, top=0.97, right=0.98)
 pl.savefig("c.pdf")
+
