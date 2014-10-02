@@ -1,0 +1,196 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{fancyhdr}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{listings}
+\lstset{language=Python,
+        basicstyle=\footnotesize\ttfamily,
+        showspaces=false,
+        showstringspaces=false,
+        tabsize=2,
+        breaklines=false,
+        breakatwhitespace=true,
+        identifierstyle=\ttfamily,
+        keywordstyle=\bfseries,
+        commentstyle=\it,
+        stringstyle=\it,
+    }
+
+\usepackage[pdftex]{graphicx}
+
+% header
+\fancyhead{}
+\fancyfoot{}
+\fancyfoot[C]{\thepage}
+\fancyhead[R]{Daniel Foreman-Mackey}
+\fancyhead[L]{Biophysics --- Problem Set 3}
+\pagestyle{fancy}
+\setlength{\headsep}{25pt}
+
+% shortcuts
+\newcommand{\Eq}[1]{Equation (\ref{eq:#1})}
+\newcommand{\eq}[1]{Equation (\ref{eq:#1})}
+\newcommand{\eqlabel}[1]{\label{eq:#1}}
+\newcommand{\Fig}[1]{Figure \ref{fig:#1}}
+\newcommand{\fig}[1]{Figure \ref{fig:#1}}
+\newcommand{\figlabel}[1]{\label{fig:#1}}
+
+% commands
+\newcommand{\bvec}[1]{\ensuremath{\boldsymbol{#1}}}
+\newcommand{\unit}[1]{\ensuremath{\,\mathrm{#1}}}
+
+\begin{document}
+
+% === Problem 1 ===
+\section{Problem 1 --- FRAP}
+
+\paragraph{(a)}
+
+In this model, starting from an initial concentration $c_0$ at time $t=0$, the
+time evolution of $c(t)$ will be
+\begin{eqnarray}
+c(t) &=& \frac{k_\mathrm{on}}{k_\mathrm{off}}
+    + \left[ c_0 - \frac{k_\mathrm{on}}{k_\mathrm{off}} \right] \,
+    \exp \left( -k_\mathrm{off}\,t \right) \quad.
+\end{eqnarray}
+In steady state,
+\begin{eqnarray}
+\frac{dc}{dt} = 0 &\rightarrow& c = \frac{k_\mathrm{on}}{k_\mathrm{off}}
+\end{eqnarray}
+and if we FRAP a fraction $\alpha$ of the molecules (and then start the
+clock), we get
+\begin{eqnarray}
+c_0 &=& (1-\alpha)\,\frac{k_\mathrm{on}}{k_\mathrm{off}}
+\end{eqnarray}
+giving
+\begin{eqnarray}
+c(t) &=& \frac{k_\mathrm{on}}{k_\mathrm{off}} \,
+    \left [
+        1 - \alpha\,\exp \left( -k_\mathrm{off}\,t \right)
+    \right ] \quad.
+\end{eqnarray}
+
+\paragraph{(b)}
+
+Using this model, we can't constrain the value of the binding rate
+$k_\mathrm{on}$ because it is exactly degenerate with the response of the
+detector.
+To fit for the exact value of $k_\mathrm{off}$, we would also need to know (or
+simultaneously fit for) the value of $\alpha$ because, while it isn't exactly
+degenerate, I think that you'd need to collect some pretty great data if you
+want to infer both parameters.
+Either way, we can clearly say that \emph{S5} has the smallest value of
+$k_\mathrm{off}$, and \emph{UBF} and \emph{Nucleolin} have the largest value.
+Assuming $\alpha \sim 1$, (and using a ruler on the Figure)
+\begin{itemize}
+{\item for \emph{UBF} and \emph{Nucleolin}, $k_\mathrm{off} \approx 0.08$,}
+{\item for \emph{B23} and \emph{Rpp}, $k_\mathrm{off} \approx 0.04$, and}
+{\item for \emph{S5}, $k_\mathrm{off} \approx 0.006$.}
+\end{itemize}
+
+
+
+% === Problem 2 ===
+\section{Problem 2 --- Diffusion limited aggregation}
+
+\paragraph{(a)}
+
+In his 1997 paper, Odde \cite{odde} derived an analytic model for the
+diffusion-limited growth of microtubules and I will follow this derivation.
+We'll start with the steady-state diffusion equation in cylindrical
+coordinates aligned with the relevant cytoskeletal filament but with the
+origin defined at the growing tip
+\begin{eqnarray}
+0 &=& D\,\left[
+\frac{1}{r}\,\frac{d}{dr} \left(r\,\frac{dc}{dr}\right) + \frac{d^2c}{dz^2}
+\right] - v\,\frac{dc}{dz}
+\end{eqnarray}
+where $c(r,\,z)$ is the concentration profile and $v$ is the rate of growth at
+the tip.
+Then, using the radial distance $s^2=r^2+s^2$, we can define the relevant
+boundary conditions:
+\begin{itemize}
+\item at large radius, the concentration should become equal to the bulk
+concentration, $c\to c_\infty$ when $s\to\infty$,
+\item at the surface of the tip ($s = R$), the flux will
+be equal to some (yet unknown) constant $W = 4\,\pi\,s^2\,D\,(dc/ds)$, and
+\item the concentration profile should be cylindrically symmetric $dc/dr=0$
+at $r=0$.
+\end{itemize}
+The solution to this system is given in Equation (4) in \cite{odde} as
+\begin{eqnarray}\eqlabel{odde}
+c(r,\,z) &=& c_\infty - \frac{w}{4\,\pi\,D\,s}\,\exp\left( -\frac{v}{2\,D}
+    \left[ s-z \right] \right)
+\end{eqnarray}
+where $w = K\,v$ is the rate of growth in units of monomer per time, and $K$
+will be a different constant for each polymer.
+
+Then, Odde argues that the term $v / D$ will, in practice, be very small
+compared to $s \ge R$ so \eq{odde} will be dominated by the $1/s$ term and the
+exponential term can be neglected giving
+\begin{eqnarray}
+c(s) &=& c_\infty - \frac{w}{4\,\pi\,D\,s} \quad.
+\end{eqnarray}
+It's obvious from this equation that the growth rate $v \propto w$ will depend
+on the details of the concentration gradient but the maximum possible growth
+rate occurs when $c(R) = 0$, or
+\begin{eqnarray}
+w_\mathrm{max} &=& 4\,\pi\,D\,R\,c_\infty \quad.
+\end{eqnarray}
+
+For microtubules, using the values, $D \sim 5\,\mathrm{\mu m^2/s}$,
+$R \sim 12.5\,\mathrm{nm}$, and $c_\infty \sim 10\,\mathrm{\mu M}$ this works
+out to give
+\begin{eqnarray}
+w_\mathrm{max} &\sim& 8 \times 10^{-15} \, \mathrm{\mu mol\,s^{-1}} \quad.
+\end{eqnarray}
+Using the fact from problem set 1 that the density of tubulin dimers in a
+microtubule is $1690\,\mathrm{\mu m^{-1}}$, we can compute the conversion from
+$w$ to $v$
+\begin{eqnarray}
+v &=& \frac{w}{4.67\times10^{-17} \, \mathrm{min\,\mu mol\,s^{-1}\,\mu
+        m^{-1}}} \\
+\to \quad v_\mathrm{max} &=& 168 \, \mathrm{\mu m \, min^{-1}} \quad.
+\end{eqnarray}
+
+Similarly, for actin, the subunit density is $370\,\mathrm{\mu m^{-1}}$
+\cite{pollard}, $R\sim 4\,\mathrm{nm}$, and $c_\infty \sim 20\,\mathrm{\mu
+M}$ giving
+\begin{eqnarray}
+v_\mathrm{max} &=& \frac{5\times10^{-15} \, \mathrm{\mu mol\, s^{-1}}}
+            {10^{-17} \, \mathrm{min\,\mu mol\,s^{-1}\,\mu m^{-1}}} \\
+&=& 490 \, \mathrm{\mu m \, min} \quad.
+\end{eqnarray}
+
+\paragraph{(b)}
+
+\Fig{concent} shows the concentration profiles for these two polymers as
+computed using \eq{odde} and the values from above.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{c.pdf}
+\end{center}
+\caption{%
+The concentration profile of monomers as a function of the distance from the
+growing polymer tip. The solid line shows the profile for a microtubule and
+the dashed line shows the result for actin.
+\figlabel{concent}}
+\end{figure}
+
+\paragraph{(c)}
+
+In agreement with the results in \cite{odde}, this predicted growth rate is
+far greater than the measured value.
+The conclusion from the referenced paper is that this means that the growth
+cannot possibly be diffusion limited.
+
+
+% === Bibliography ===
+\bibliography{ps3}{}
+\bibliographystyle{unsrt}
+
+\end{document}
