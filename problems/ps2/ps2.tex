@@ -52,12 +52,64 @@
 In his 1905 paper \cite{einstein}, Einstein derived the mathematical
 formalism for the stochastic Brownian motions of a particle suspended in a
 liquid.
-By considering a volume
+Brownian motion is a standard part of the Physics education so his results are
+not surprising in the current day but he presents them as unintuitive when
+writing the paper so I'm sure that they were unexpected at the time.
+
+The main result is that small particles suspended in a solution at finite
+temperature will experience observable stochastic motions with an RMS
+displacement of $\lambda = \sqrt{2\,\pi\,t}$ or a Gaussian probability
+density in position.
+The model is that the particles are displaced by the stochastic thermal
+motions of the molecules in the solution.
+He also finds that if these particles have radius $r$, the diffusion
+coefficient is
+\begin{eqnarray}
+D &=& \frac{R\,T}{6\,\pi\,N\,k_B\,r} \quad.
+\end{eqnarray}
+Combining these results, you will find
+\begin{eqnarray}
+\lambda &=& \sqrt{t}\,\sqrt{\frac{R\,T}{3\,\pi\,N\,k_B\,r}} \quad.
+\end{eqnarray}
+Therefore, by controlling for $T$ and $N$, and measuring $\lambda$, an
+experiment could measure the effective radius $r$.
 
 
 \paragraph{(b)}
 
+In a short note \cite{abe}, Abe \& Thurner discuss a derivation of fractional
+anomalous diffusion starting from Einstein's formulation of diffusion.
+The main assumption that Einstein made was that the displacement probability
+density for the molecules must have only a second moment (therefore, making it
+Gaussian) but this assumption can be relaxed.
 
+Starting from the equation
+\begin{eqnarray}
+f(x,\,t + \tau) \, dx &=&  dx \int_{-\infty} ^\infty d\Delta
+f(x+\Delta,\,t)\,\phi(\Delta) \quad,
+\end{eqnarray}
+these authors realize that Einstein's assumption that $\phi (\Delta)$ must
+have (only) a non-vanishing second moment is not required by all displacement
+probability densities.
+Instead, the equation can be solved by viewing it as a convolution and working
+in the Fourier domain.
+
+Then, we can choose to model the displacement probability distribution in
+Fourier space as the L\'evy distribution
+\begin{eqnarray}
+\tilde{\phi}(k) &=& e^{-a\,|k|^\gamma} \approx 1 - a\,|k|^\gamma
+\end{eqnarray}
+and take the inverse Fourier transform of
+\begin{eqnarray}
+\tilde{f}(k,\,t+\tau) &=& \tilde{f}(k,\,t)\,\tilde{\phi}(k)
+\end{eqnarray}
+to get
+\begin{eqnarray}
+\frac{df}{dt} &=& D \, \frac{d^{\gamma}f}{d|x|^\gamma}
+\end{eqnarray}
+where $D = a/\tau$.
+Under this model, the expected value of the half-width scales as
+$t^{1/\gamma}$; this is an example of anomalous diffusion.
 
 
 % === Problem 2 ===
