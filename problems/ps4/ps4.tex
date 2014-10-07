@@ -1,0 +1,135 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{fancyhdr}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{listings}
+\lstset{language=Python,
+        basicstyle=\footnotesize\ttfamily,
+        showspaces=false,
+        showstringspaces=false,
+        tabsize=2,
+        breaklines=false,
+        breakatwhitespace=true,
+        identifierstyle=\ttfamily,
+        keywordstyle=\bfseries,
+        commentstyle=\it,
+        stringstyle=\it,
+    }
+
+\usepackage[pdftex]{graphicx}
+
+% header
+\fancyhead{}
+\fancyfoot{}
+\fancyfoot[C]{\thepage}
+\fancyhead[R]{Daniel Foreman-Mackey}
+\fancyhead[L]{Biophysics --- Problem Set 4}
+\pagestyle{fancy}
+\setlength{\headsep}{25pt}
+
+% shortcuts
+\newcommand{\Eq}[1]{Equation (\ref{eq:#1})}
+\newcommand{\eq}[1]{Equation (\ref{eq:#1})}
+\newcommand{\eqlabel}[1]{\label{eq:#1}}
+\newcommand{\Fig}[1]{Figure \ref{fig:#1}}
+\newcommand{\fig}[1]{Figure \ref{fig:#1}}
+\newcommand{\figlabel}[1]{\label{fig:#1}}
+
+% commands
+\newcommand{\bvec}[1]{\ensuremath{\boldsymbol{#1}}}
+\newcommand{\unit}[1]{\ensuremath{\,\mathrm{#1}}}
+
+\begin{document}
+
+% === Problem 1 ===
+\section{Problem 1}
+
+\paragraph{(a)}
+
+See \fig{curve}.
+
+
+\paragraph{(b)}
+
+The Hessian of this surface is
+\begin{eqnarray}
+H &=& \left( \begin{array}{cc}
+    2 & 1 \\
+    1 & -4
+\end{array}\right) \quad.
+\end{eqnarray}
+We can find the eigenvalues $k_\pm$ of this matrix by solving
+\begin{eqnarray}
+{k_\pm}^2 + 2\,k_\pm - 9 &=& 0
+\end{eqnarray}
+giving
+\begin{eqnarray}
+k_\pm &=& \frac{-2 \pm \sqrt{40}}{2} \\
+&\approx& 2.16 \quad \mathrm{and} \quad  -4.16 \quad.
+\end{eqnarray}
+These are the principal curvatures of the surface.
+The mean curvature is therefore $H = -1$ and the Gaussian curvature is $K
+= -9$.
+
+
+\paragraph{(c)}
+
+The bending free energy density is
+\begin{eqnarray}
+f &=& 2\,\kappa\,H + \kappa_G\,K
+\end{eqnarray}
+where $\kappa$ and $\kappa_G$ are the bending rigidities of the surface.
+Since $H$ and $K$ are constant in $x$ and $y$, we only need to multiply by the
+area of the square ($1$) to find the total free energy
+\begin{eqnarray}
+F &=& -2\,\kappa - 9 \kappa_G \quad.
+\end{eqnarray}
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{figure.pdf}
+\end{center}
+\caption{%
+The surface $h(x,\,y)$ plotted as a function of $x$ and $y$ at a set of
+different values of the other parameter.
+\figlabel{curve}}
+\end{figure}
+
+
+% === Problem 2 ===
+\section{Problem 2}
+
+
+% === Problem 3 ===
+\section{Problem 3}
+
+
+% === Problem 4 ===
+\section{Problem 4}
+
+
+% === Problem 5 ===
+\section{Problem 5}
+
+This year's Nobel Prize in Physiology or Medicine was awarded to John O'Keefe,
+May-Britt Moser, and Edvard I. Moser for their work on understanding how the
+brain maps physical spaces \cite{press,nyt}.
+In the early--mid 1970s, O'Keefe found that a specific combination of nerve
+cells---he called them ``place cells''---in the hippocampus activated when
+rats where in specific locations in their environment \cite{nobel1a, nobel1b}.
+This suggests that these rats actually...
+Building on this work, members of the Moser lab measured neurons in the
+entorhinal cortex finding ``grid cells'' that seem to define a coordinate
+system.
+
+
+
+% === Bibliography ===
+\bibliography{ps4}{}
+\bibliographystyle{unsrt}
+
+\end{document}
