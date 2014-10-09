@@ -74,6 +74,12 @@ These are the principal curvatures of the surface.
 The mean curvature is therefore $H = -1$ and the Gaussian curvature is $K
 = -9$.
 
+The principal radii of curvature are just
+\begin{eqnarray}
+r_\pm &=& \frac{1}{|k_\pm|} \\
+&=& 0.24 \quad \mathrm{and} \quad 0.46 \quad.
+\end{eqnarray}
+
 
 \paragraph{(c)}
 
@@ -99,17 +105,103 @@ different values of the other parameter.
 \figlabel{curve}}
 \end{figure}
 
+\newpage
+
 
 % === Problem 2 ===
 \section{Problem 2}
+
+I'm very sorry but I didn't leave myself enough time to finish this problem!
+I was at a conference again.
+I'll go over the result with my classmates after the fact and I'll try not to
+let my travels get in the way of homework again.
+I'm sorry!
 
 
 % === Problem 3 ===
 \section{Problem 3}
 
+To form a spherical vesicle of radius $R$, the curvature of the surface must
+be $k = 1/R$.
+The Gaussian curvature is then $K = 1/R^2$ and the mean curvature is $H =
+-1/R$ \cite{bending}.
+This means that the energy required to bend a membrane into such a sphere is
+\begin{eqnarray}
+f &=& 2\,\kappa\,H + \kappa_G\,K \\
+&=& \frac{2\,\kappa}{R} + \frac{\kappa_G}{R^2} \quad.
+\end{eqnarray}
+
 
 % === Problem 4 ===
 \section{Problem 4}
+
+\paragraph{(a)}
+
+The classical ``fluid mosaic'' model of cell membranes \cite{fluid} describes
+the membrane as mostly a lipid bilayer---exposed directly to the outside
+world---with a few proteins floating unencumbered in this 2D surface.
+Under this model, the membrane can be approximated as just a lipid bilayer
+with small perturbations induced by the proteins.
+Engelman \cite{membranes} argues that more recent experimental and theoretical
+progress suggests that proteins actually heterogeneously fill much more of the
+surface than this model would allow and that the membrane itself varies
+substantially in structure.
+Part of this effect comes from the fact that the proteins are all quite
+varied (in shape and size) and they all interact with the membrane in
+different complicated ways.
+In this model the membrane structure is ``patchy'' instead of homogeneous.
+One major result of a model like this is that much of the lipid bilayer that
+was previously thought to be exposed to the aqueous environment is now thought
+to be covered by large protruding protein complexes.
+Another big change is that the interactions between proteins are now
+non-negligible.
+In the fluid mosaic model, proteins can be modeled as independent,
+free-floating objects randomly distributed in the membrane surface.
+In the ``patchy'' model, the proteins are not distributed randomly.
+Instead, they are clustered---probably due to electrostatic interactions---in
+specific functional groups that perform explicit tasks.
+
+\paragraph{(b)}
+
+For the second part of this problem, I read the paper by McMahon \& Gallop
+\cite{curvature} describing some (primarily theoretical) mechanisms with which
+cellular membranes can be deformed and vesicles can be created.
+In particular, they describe five classes of mechanisms but emphasize that
+the different types probably act in parallel.
+These mechanisms can be summarized as follows:
+\begin{enumerate}
+
+{\item {\bf changing lipid composition}:
+the two ways that lipid composition can effect the curvature of the membrane
+are by \emph{(a)} chemically changing the headgroup size, or \emph{(b)} moving
+individual lipids from one side of the membrane to the other.}
+
+{\item {\bf integral membrane proteins}:
+the shapes of transmembrane proteins are not known but if one has an
+asymmetric (or, more specifically, conical) shape, the membrane will deform
+around it and curve.}
+
+{\item {\bf cytoskeleton}:
+these authors make the argument that the cytoskeleton is \emph{probably}
+involved in the deformation of membranes because it is involved in other
+active changes in the cell---and, in particular, in response to membrane
+tension---but there isn't really a clear description of what roll it exactly
+plays.}
+
+{\item {\bf peripheral membrane proteins}:
+proteins can attach to the outside of the membrane and form a sort of
+``exoskeleton'' to stabilize and sculpt the membrane shape.
+Other ``coat'' proteins can indirectly influence the shape of the membrane by
+forming curved structures that aren't directly attached to the membrane.}
+
+{\item {\bf alpha helix insertion}:
+the final method for inducing curvature that these authors discuss is when
+small proteins---alpha helices---are inserted into one half of the lipid
+bilayer causing the layer to become asymmetric.}
+
+\end{enumerate}
+
+
 
 
 % === Problem 5 ===
@@ -121,11 +213,19 @@ brain maps physical spaces \cite{press,nyt}.
 In the early--mid 1970s, O'Keefe found that a specific combination of nerve
 cells---he called them ``place cells''---in the hippocampus activated when
 rats where in specific locations in their environment \cite{nobel1a, nobel1b}.
-This suggests that these rats actually...
-Building on this work, members of the Moser lab measured neurons in the
-entorhinal cortex finding ``grid cells'' that seem to define a coordinate
-system.
+This corresponds to measuring and remembering the context at each location.
+These locations are then positioned absolutely in space by a grid of neurons
+in the entorhinal cortex, discovered about thirty years later by members of
+the Moser lab \cite{nobel2a, nobel2b, nobel2c}.
+These grid cells are arranged in a uniform hexagonal grid in the brain and the
+layout is mapped directly onto the physical space.
 
+This work was awarded the Nobel Prize partly because it provides direct deep
+insight into how the brain works but it also seems like it was also awarded
+because there have been connections between degradation of these parts of the
+brain and Alzheimer's disease.
+There is therefore a chance that studying this neurological system will inform
+research into treatments for Alzheimer's \cite{press}.
 
 
 % === Bibliography ===
