@@ -31,6 +31,7 @@
 \fancyhead[L]{Biophysics --- Midterm}
 \pagestyle{fancy}
 \setlength{\headsep}{25pt}
+\setlength{\headheight}{14.5pt}
 
 % shortcuts
 \newcommand{\Eq}[1]{Equation (\ref{eq:#1})}
@@ -52,13 +53,13 @@
 \section*{Part 1}
 
 Instead of researching the spontaneous organization of biological molecules
-like we discussed previously\footnote{I did however look into the research by
-N. Clark \emph{et al.} and it's very interesting, thanks!}, after we discussed
+like I had planned\footnote{I did however look into the research by N. Clark
+\emph{et al.} and it's very interesting, thanks!}, after we discussed
 it in class, I decided to look into {\bf the structure of chromatin}.
-In particular, I was especially interested in the techniques behind
-{\bf chromosome conformation capture} (3C) so I'll focus on that.
-The other sub-area that I'll consider is {\bf fluorescence \emph{in-situ}
-hybridization} (FISH) studies of ``chromosome territories''.
+In particular, I was especially interested in the techniques behind 3C so I'll
+focus on that.
+The other sub-area that I consider is FISH studies of ``chromosome
+territories''.
 
 \subsection*{Part 1.3}
 
@@ -70,7 +71,7 @@ hybridization} (FISH) studies of ``chromosome territories''.
 
 It was long speculated---starting as early as the late 1800s
 \cite{old}---that chromosomes are spatially isolated---in regions now called
-``chromosome territories''---even during interphase \cite{ct-review1,
+``chromosome territories'', even during interphase \cite{ct-review1,
 ct-review2}.
 This theory was at odds with the competing---and then more popular
 theory---that chromatin were arranged as a fully-mixed equilibrium
@@ -118,8 +119,8 @@ of Edinburgh).
 A key paper out of her lab \cite{local} demonstrated that the locations of
 specific chromosomes in human cells are set early and reproducibly.
 In particular, they showed that two similar (in terms of size and the amount
-of genetic information content) chromosomes (18 and 19) occupy very different
-places from each other but that every cell this same distinction.
+of genetic information content) human chromosomes (18 and 19) occupy very
+different places from each other; this distinction is observed in all cells.
 This motivates the epigenetic theory that the layout of chromosomes in the
 nucleus is actually functional and not random.
 This paper has 654 citations%
@@ -130,8 +131,8 @@ This paper has 654 citations%
 
 \emph{Reviews: \cite{3c-review1}, \cite{3c-review2}, and \cite{3c-review3}}
 
-\noindent\emph{Key papers: \cite{ccc}, \cite{looping}, \cite{4c}, and
-\cite{5c}}
+\noindent\emph{Key papers: \cite{ccc}, \cite{looping}, and the set of
+generalizations described in \cite{4c}, \cite{5c}, and \cite{hi-c}}
 
 Chromosome conformation capture (3C) is an impressive statistical technique
 for determining the distribution of chromatin in the nucleus.
@@ -190,12 +191,13 @@ At the time of this publication, de Laat was based at Erasmus University in
 Rotterdam, Netherlands but he is now a professor at The Hubrecht Institute in
 Utrecht.
 
-Both Dekker \cite{5c} and de Laat \cite{4c} have also worked to develop more
-robust versions of the procedure called 5C and 4C respectively.
+Both Dekker \cite{5c, hi-c} and de Laat \cite{4c} have also worked to develop
+more robust versions of the procedure called 5C, Hi-C, and 4C respectively.
 Each method is designed to improve the flexibility and resolution of the
 method by focusing on many smaller fragments of chromatin.
-The papers have 412 and 579 citations%
+The papers have 412, 1232, and 579 citations%
 \footnote{\url{http://scholar.google.com/scholar?cites=11459042540325628167}}%
+\footnote{\url{http://scholar.google.com/scholar?cites=12390817964819514773}}%
 \footnote{\url{http://scholar.google.com/scholar?cites=17950290286653863144}}
 respectively.
 
@@ -203,15 +205,104 @@ respectively.
 
 {\bf I chose to focus on 3C for my review} mostly because I found it most
 interesting technically.
-That being said, it is also an exciting young field that seems, from my
-research, to have revolutionized the way that we study the structure of
-chromatin.
+That being said, it is also an exciting young field with a lot of recent
+results that seem, from my research, to have revolutionized the way we study
+the structure of chromatin.
 
 \newpage
 
 \section*{Part 2}
 
+It has been known for well over a century that the genetic information in the
+nuclei of eukaryotic cells organize into structured, distinct components
+during cell division.
+Shortly after this discovery, it was also postulated that even during
+interphase the chromatin did not exist in equilibrium and instead, each
+chromosome occupies a physically separate ``territory'' \cite{old}.
+There was little evidence supporting this hypothesis and it fell mostly out of
+favor until the 1970s when experiments---mostly from the Cremer lab in
+Heidelberg, Germany---began to demonstrate that, indeed, this theory was
+correct \cite{zorn, hamster, cremer, local}.
+Much of this progress was due to technological advances; in particular, the
+fluorescence \emph{in-situ} hybridization (FISH) method enabled specific
+chromosomes to be fluorescently labeled with different colors and imaged
+simultaneously in the same nucleus, providing the smoking gun for the
+``chromosome territory'' theory.
 
+After this discovery, the methodological development didn't slow.
+In 2002, Job Dekker, Nancy Kleckner, and collaborators published their
+\emph{chromosome conformation capture} (3C) method \cite{ccc}.
+Unlike FISH, this technique provides precise, high-resolution, information
+about the spatial structure of chromatin during interphase.
+3C is a statistical technique for determining the typical physical separation
+between specific sequences in a genome at any stage of the cell cycle.
+The procedure is, roughly, \emph{(a)} fix a culture of cells with formaldehyde
+to cross-link strands of DNA that are in physical contact, \emph{(b)} digest
+the chromatin with a specific restriction enzyme, \emph{(c)} ligate the
+digested fragments to form single strands, and \emph{(d)} sequence the
+resulting fragments \cite{3c-review1}.
+This dataset can then be used to determine the frequency at which specific
+sequences come into contact and this can, in turn, be used to statistically
+reconstruct the three-dimensional structure of a chromosome or the genome as a
+whole \cite{ccc}.
+
+In the original paper describing the 3C method \cite{ccc}, Dekker \etal\
+applied the procedure to a specific chromosome yeast.
+By studying the cells at various stages of meiosis, these authors demonstrated
+quantitative measurements of the qualitative observations of chromosome
+reorganization during cell division.
+Then they studied the frequency of pairwise interactions between a set of
+positions on the same chromosome to build a statistical sketch of the full
+three-dimensional structure of the chromosome during interphase.
+
+Shortly after this procedure was published, Wouter de Laat and members of his
+lab in the Netherlands used it to study the physical interactions between
+sequences describing specific proteins and their regulators in mammalian
+cells \cite{looping}.
+In this work, these authors found that the chromatin folds or ``loops'' to
+place these sequences in physical contact in liver cells where the
+$\beta$-globin protein is expressed but not in brain cells where the protein
+is not found.
+This was the first direct measurement of an epigenetic or physical basis for
+the regulation of gene expression.
+
+More recently, the focus of experiments like these has shifted to larger scale
+measurements mapping entire genomes.
+This type of analysis was not possible with the original 3C procedure because
+the target sequences where the cross-linking frequency would be measured
+needed to be chosen in advance and the specific reagents used were problem
+specific.
+These constraints have been relaxed by a few generalizations of the 3C method
+\cite{4c, 5c, hi-c}.
+Of these, the recent \emph{Hi-C} method \cite{hi-c} from the Dekker lab is the
+most exciting.
+Hi-C uses high-throughput sequencing to generate unbiased genome-wide
+measurements of physical interactions between genetic loci.
+For example, the Hi-C method was first applied to study the organization of
+chromatin in human cells \cite{hi-c}.
+In this study, the authors confirmed, quantitatively, previous qualitative
+observations---made using FISH---that some chromosomes (16, 17, 19, 20, 21,
+and 22) are concentrated near the interior of the nucleus while others are
+preferentially located near the membrane (chromosome 18 in particular).
+They also demonstrate that their data prefer the ``fractal model'' of
+chromatin organization---where at every resolvable scale there exist
+self-interacting loci---instead of an equilibrium model.
+
+The development of 3C-type methods has revolutionized our understanding of the
+organization of chromatin in the cell by enabling large-scale quantitative
+studies of the physical interactions between genetic loci.
+These methods are key if we hope to study the epigenetic effects of the
+spatial distribution of chromatin.
+The main shortcoming of these methods is that they are all population-level
+experiments; they measure the ensemble-averaged properties of the chromosome
+organization.
+There has been some recent work on modifying these procedures to work with
+single cells or, at least, study the variance in individual systems away from
+the population averages, for example \cite{single, single2}, but there is
+still work to be done!
+
+
+\newpage
 
 % === Bibliography ===
 \bibliography{midterm}{}
