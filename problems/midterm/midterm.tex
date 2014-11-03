@@ -1,0 +1,196 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{fancyhdr}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{url}
+\usepackage[multiple]{footmisc}
+
+\usepackage{listings}
+\lstset{language=Python,
+        basicstyle=\footnotesize\ttfamily,
+        showspaces=false,
+        showstringspaces=false,
+        tabsize=2,
+        breaklines=false,
+        breakatwhitespace=true,
+        identifierstyle=\ttfamily,
+        keywordstyle=\bfseries,
+        commentstyle=\it,
+        stringstyle=\it,
+    }
+
+\usepackage[pdftex]{graphicx}
+
+% header
+\fancyhead{}
+\fancyfoot{}
+\fancyfoot[C]{\thepage}
+\fancyhead[R]{Daniel Foreman-Mackey}
+\fancyhead[L]{Biophysics --- Midterm}
+\pagestyle{fancy}
+\setlength{\headsep}{25pt}
+
+% shortcuts
+\newcommand{\Eq}[1]{Equation (\ref{eq:#1})}
+\newcommand{\eq}[1]{Equation (\ref{eq:#1})}
+\newcommand{\eqlabel}[1]{\label{eq:#1}}
+\newcommand{\Fig}[1]{Figure \ref{fig:#1}}
+\newcommand{\fig}[1]{Figure \ref{fig:#1}}
+\newcommand{\figlabel}[1]{\label{fig:#1}}
+
+\newcommand{\etal}{\emph{et al.}}
+
+% commands
+\newcommand{\bvec}[1]{\ensuremath{\boldsymbol{#1}}}
+\newcommand{\unit}[1]{\ensuremath{\,\mathrm{#1}}}
+\def\baselinestretch{1.1}
+
+\begin{document}
+
+\section*{Part 1}
+
+Instead of researching the spontaneous organization of biological molecules
+like we discussed previously\footnote{I did however look into the research by
+N. Clark \emph{et al.} and it's very interesting, thanks!}, after we discussed
+it in class, I decided to look into {\bf the structure of chromatin}.
+In particular, I was especially interested in the techniques behind
+{\bf chromosome conformation capture} (3C) so I'll focus on that.
+The other sub-area that I'll consider is {\bf fluorescence \emph{in-situ}
+hybridization} (FISH) studies of ``chromosome territories''.
+
+\subsection*{Part 1.3}
+
+\subsubsection*{Chromosome territories}
+
+\emph{Reviews: \cite{ct-review3}, \cite{ct-review2} and \cite{ct-review1}}
+
+\noindent\emph{Key papers: \cite{hamster}, \cite{cremer}, and \cite{local}}
+
+It was long speculated---starting as early as the late 1800s
+\cite{old}---that chromosomes are spatially isolated---in regions now called
+``chromosome territories''---even during interphase \cite{ct-review1,
+ct-review2}.
+This theory was at odds with the competing---and then more popular
+theory---that chromatin were arranged as a fully-mixed equilibrium
+``spaghetti'' in the nucleus and it was mostly disregarded until the 1970s
+\cite{cremer}.
+The first convincing evidence of the territorial chromosome theory appeared
+when members of the Cremer lab in Heidelberg, Germany determined that only a
+small number of chromosomes were affected by focused radiation damage applied
+to the DNA during interphase \cite{zorn, hamster}.
+In the 80s and 90s, this theory was confirmed and more directly studied using
+fluorescence \emph{in-situ} hybridization (FISH) \cite{cremer}.
+This technique lets researchers tag and image the chromatin of specific
+chromosomes, by targeting and linking fluorescent probes to specific DNA
+sequences.
+This image can then be used to directly see the location of each chromosome
+even during interphase.
+The fact that chromosomes are localized during interphase certainly has
+epigenetic effects and recently, there has been research aimed at determining
+and understanding the locations of specific chromosomes \cite{local}.
+
+Much of the research in this field came from a lab in Germany led by brothers
+{\bf Thomas} and {\bf Christoph Cremer}.
+These researchers presented the first compelling evidence for the chromosome
+territory theory \cite{hamster}.
+
+
+ and went on to use the FISH method for imaging
+chromosome territories \cite{cremer}.
+Another important researcher in this field is {\bf Wendy Bickmore} who's lab
+performed research that indicated tha \cite{local}.
+
+
+\subsubsection*{Chromosome conformation capture}
+
+\emph{Reviews: \cite{3c-review1}, \cite{3c-review2}, and \cite{3c-review3}}
+
+\noindent\emph{Key papers: \cite{ccc}, \cite{looping}, \cite{4c}, and
+\cite{5c}}
+
+Chromosome conformation capture (3C) is an impressive statistical technique
+for determining the distribution of chromatin in the nucleus.
+The basic idea is to cross-link chromatin filaments that physically touch and
+then sequence the cross-linked strands to determine which parts of the genome
+are co-spatial \cite{3c-review1}.
+The method is statistical because, in general, you must study a large set of
+cells so that random interactions don't dominate the signal \cite{3c-review2}.
+The formal steps in the procedure are \cite{3c-review1, 3c-review2}:
+\begin{enumerate}
+
+\item Fix the cells with formaldehyde, covalently linking interacting strands
+of chromatin,
+
+\item Digest the chromatin with a specific ``restriction enzyme'' that
+separates the cross-linked chromatin from the rest,
+
+\item Ligate the cross-linked strands to join them and get a single strand,
+
+\item Dissolve the cross-links and sequence the strands.
+
+\end{enumerate}
+After this procedure, the frequency with which sequences are paired is related
+to their average physical separation in the nucleus.
+The original version of this procedure was published in a seminal 2002 paper
+\cite{ccc} where the authors measured the layout of the genome of yeast cells
+at various stages of meiosis.
+Using this statistical sample of sequence distances, these authors
+reconstructed the ensemble-averaged, three-dimensional structure of one of the
+chromosomes in the yeast they were studying.
+
+The three key researchers in this field that I would nominate for the Nobel
+are {\bf Job Dekker}, {\bf Nancy Kleckner}, and {\bf Wouter de Laat}.
+Dekker, now a professor at the University of Massachusetts, developed the 3C
+method while a Postdoctoral Fellow in the Kleckner lab at Harvard \cite{ccc}.
+Their paper \cite{ccc} described the 3C procedure and, as described above,
+they applied it to determine the three-dimensional structure of a chromosome
+in yeast.
+This is the seminal paper of this field and it has been cited about 1250
+times%
+\footnote{\url{http://scholar.google.com/scholar?cites=14717049323260909894}}.
+
+The next key paper \cite{looping} is from the de Laat lab.
+In this paper, the authors used 3C to study a physical mechanism for
+transcription regulation.
+In particular, they showed that in liver cells of the murine---where the
+$\beta$-globin protein is expressed---the ``locus control region'' (LCR; the
+genes responsible for regulating the expression of the $\beta$-globin gene)
+comes into physical contact with the $\beta$-globin gene even though it is
+located tens of kilobases away in the genome.
+In contrast, in brain cells where the protein does not occur, there is no
+physical contact between the $\beta$-globin gene and the LCR.
+This paper has been cited about 865 times%
+\footnote{\url{http://scholar.google.com/scholar?cites=15030508233271733256}}.
+At the time of this publication, de Laat was based at Erasmus University in
+Rotterdam, Netherlands but he is now a professor at The Hubrecht Institute in
+Utrecht.
+
+Both Dekker \cite{5c} and de Laat \cite{4c} have also worked to develop more
+robust versions of the procedure called 5C and 4C respectively.
+Each method is designed to improve the flexibility and resolution of the
+method by focusing on many smaller fragments of chromatin.
+The papers have 412 and 579 citations%
+\footnote{\url{http://scholar.google.com/scholar?cites=11459042540325628167}}%
+\footnote{\url{http://scholar.google.com/scholar?cites=17950290286653863144}}
+respectively.
+
+\subsection*{Part 1.4}
+
+{\bf I chose to focus on 3C for my review} mostly because I found it most
+interesting technically.
+That being said, it is also an exciting young field that seems, from my
+research, to have revolutionized the way that we study the structure of
+chromatin.
+
+
+\section*{Part 2}
+
+
+
+% === Bibliography ===
+\bibliography{midterm}{}
+\bibliographystyle{unsrt}
+
+\end{document}
